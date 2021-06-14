@@ -1,0 +1,63 @@
+<html>
+    <head>
+    <style>
+        body {
+        background-image: url("photo/img2.jpeg");
+        background-repeat: no-repeat;
+       
+        font-family: "Lucida Console", Courier, monospace;
+      }
+      td {
+        height: 40px;
+      }
+    </style>
+        <body>
+            <a href="index.html"><button>BACK</button></a>
+            <center>
+                <h1>CAPITOL ARTS AND SPORTS CLUB</h1>
+            <form method="post" action="regAction.php" name="Register" onsubmit="return validate()">
+                <table>
+                    <tr>
+                        <td>First Name</td>
+                        <td>:</td>
+                        <td><input type="text"  name="txtName1" id="firstName" placeholder="First Name"></td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td>:</td>
+                        <td><input type="password" placeholder="Enter Password" name="txtPsw1" id="psw"></td>
+                    </tr>
+                    <tr>
+                        <td>Confirm Password</td>
+                        <td>:</td>
+                        <td><input type="password" placeholder="Confirm Your Password" name="txtRe_Psw" ></td>
+                    </tr>
+                </table>
+      
+        <button>REGISTER</button>
+        <button type="reset">RESET</button>
+            </form>
+        </center>
+        </body>
+        <script>
+            function validate(){
+                var password=document.Register.txtPsw1.value;
+                var passwdLength=password.length;
+                if(passwdLength <= 7 )
+                {
+                    alert("Password Length Mustbe Minimum 8 Character Length");
+                    document.Register.txtPsw1.value==""; 
+                    document.Register.txtPsw1.focus(); 
+                    return false
+                }
+                var conpassword=document.Register.txtRe_Psw.value;
+                if(password != conpassword)
+                {
+                    alert("Passwords Do Not Match");
+                    document.Register.txtRe_Psw.focus();  
+                    return false;
+                }   
+            }
+        </script>
+    </head>
+</html>

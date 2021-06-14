@@ -1,0 +1,37 @@
+
+if($regid==$addname)
+{
+    echo "<script>
+    alert(' Alredy Completed Your Participation');
+    window.location.href='eventDisplay.php';
+    </script>";
+}else{
+$sql = "INSERT INTO `tbl_event_reg`(`name`,`item`,`time`,`phone_no`)VALUES ('$name','$item','$time','$Number')";
+// echo $sql;
+//  exit;
+
+    if($conn->query($sql) === TRUE)
+    {
+        echo "<script>
+            alert('Participation Succesfuly Completed');
+            window.location.href='eventDisplay.php';
+            </script>";
+    }
+
+    else
+    {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+    // Close connection
+    
+    $conn->close();
+}
+
+
+
+
+while($row = $result->fetch_assoc()) 
+{
+$addname= $value["name"];
+echo $addname;
+}
